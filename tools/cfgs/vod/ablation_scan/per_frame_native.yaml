@@ -1,0 +1,8 @@
+# Table 4 reference: per-frame native order (PER_FRAME_SEQUENCE=True).
+# Identical to rev1/E0_per_frame.yaml
+_BASE_CONFIG_: cfgs/vod/4d_mambanet.yaml
+
+MODEL:
+    BACKBONE_3D:
+        MAMBA_CFG:
+            PER_FRAME_SEQUENCE: True

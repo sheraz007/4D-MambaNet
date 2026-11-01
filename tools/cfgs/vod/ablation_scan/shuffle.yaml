@@ -1,0 +1,8 @@
+# Table 4: random shuffle. Identical to rev1/E1_shuffle.yaml
+_BASE_CONFIG_: cfgs/vod/4d_mambanet.yaml
+
+MODEL:
+    BACKBONE_3D:
+        MAMBA_CFG:
+            PER_FRAME_SEQUENCE: True
+            SCAN_ORDER: shuffle

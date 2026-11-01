@@ -1,0 +1,16 @@
+# Table 7(d) ablation ONLY — connected RCS BEV prior on Radar M3-Net reproduction.
+# Identical to rcs_fix uni_ptv3_xcout_rcs_fixed.yaml (attn at xcout, no Mamba).
+_BASE_CONFIG_: cfgs/vod/m3net_repro.yaml
+
+MODEL:
+    INPUT_TEM:
+        NAME: get_before_tem_feat_rcs
+
+    MAP_TO_BEV:
+        NAME: RCSAwareBEVCompressionSparse
+        NUM_BEV_FEATURES: 128
+        OUTPUT_BEV_NON_EMPTY_MASK: True
+        POINT_CLOUD_RANGE: [0, -25.6, -3, 51.2, 25.6, 2]
+        BASE_VOXEL_SIZE: [0.05, 0.05]
+        RCS_OUT_CHANNELS: 16
+        DETACH: False

@@ -1,0 +1,25 @@
+# Data and outputs
+data/vod/**
+data/tj4d/**
+!data/vod/.gitkeep
+!data/tj4d/.gitkeep
+output/
+checkpoints/
+*.pth
+*.pkl
+!tools/**/*.py
+
+# Build / python
+build/
+dist/
+*.egg-info/
+**/__pycache__/
+*.pyc
+.pcdet_cache/
+*.so
+
+# Editor / local
+.vscode/
+.idea/
+.DS_Store
+*.log

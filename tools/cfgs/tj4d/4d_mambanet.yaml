@@ -1,0 +1,9 @@
+# 4D-MambaNet on TJ4DRadSet (9 point attributes, single-frame).
+# Identical to tools/cfgs/tj4d_models/uni_ptv3_mamba_only_tj4d.yaml
+# Paper runs: output/mamba_only_tj4d_s{0..3}_gpu1_reduced
+_BASE_CONFIG_: cfgs/tj4d/m3net_repro.yaml
+
+MODEL:
+    BACKBONE_3D:
+        attn_loc: []
+        mamba_loc: ['xc3', 'xc4', 'xcout']

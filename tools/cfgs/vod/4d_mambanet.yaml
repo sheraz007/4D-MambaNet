@@ -1,0 +1,8 @@
+# 4D-MambaNet (VoD): MambaVoxelBlock at xc3, xc4, xcout; RCS as input feature; no BEV RCS module.
+# Values identical to tools/cfgs/vod_models/last_model/uni_ptv3_mamba_only.yaml used for mamba_only_s*_gpu1.
+_BASE_CONFIG_: cfgs/vod/m3net_repro.yaml
+
+MODEL:
+    BACKBONE_3D:
+        attn_loc: []
+        mamba_loc: ['xc3', 'xc4', 'xcout']

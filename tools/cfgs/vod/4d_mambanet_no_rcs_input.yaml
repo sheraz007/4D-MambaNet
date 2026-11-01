@@ -1,0 +1,6 @@
+# Table 3 / 7(a): 4D-MambaNet without RCS input (RCS column dropped in the VFE only).
+# Identical to rev1/E4c_no_input_rcs_no_prior.yaml
+_BASE_CONFIG_: cfgs/vod/4d_mambanet.yaml
+
+MODEL:
+    RCS_IN_INPUT: False

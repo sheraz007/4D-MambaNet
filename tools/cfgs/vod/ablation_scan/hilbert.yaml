@@ -1,0 +1,8 @@
+# Table 4: Hilbert. Identical to rev1/E1_hilbert.yaml
+_BASE_CONFIG_: cfgs/vod/4d_mambanet.yaml
+
+MODEL:
+    BACKBONE_3D:
+        MAMBA_CFG:
+            PER_FRAME_SEQUENCE: True
+            SCAN_ORDER: hilbert

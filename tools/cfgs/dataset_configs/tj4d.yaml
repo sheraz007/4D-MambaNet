@@ -1,0 +1,50 @@
+# TJ4DRadSet. Override root with env MAMBANET4D_DATA or DATA_PATH.
+DATASET: 'TJ4DDataset'
+DATA_PATH: 'data/tj4d'
+
+POINT_CLOUD_RANGE: [0, -40, -4, 70.4, 40, 2]
+
+DATA_SPLIT: {
+    'train': train,
+    'test': val
+}
+
+INFO_PATH: {
+    'train': [pcdtj_infos_train.pkl],
+    'test': [pcdtj_infos_val.pkl]
+}
+
+FOV_POINTS_ONLY: True
+
+DATA_AUGMENTOR:
+    DISABLE_AUG_LIST: ['placeholder']
+    AUG_CONFIG_LIST:
+        - NAME: random_world_flip
+          ALONG_AXIS_LIST: ['x']
+
+        - NAME: random_world_scaling
+          WORLD_SCALE_RANGE: [0.95, 1.05]
+
+POINT_FEATURE_ENCODING: {
+    encoding_type: absolute_coordinates_encoding,
+    used_feature_list: ['x', 'y', 'z', 'vr', 'range', 'power', 'alpha', 'beta', 'vrc'],
+    src_feature_list: ['x', 'y', 'z', 'vr', 'range', 'power', 'alpha', 'beta', 'vrc'],
+}
+
+DATA_PROCESSOR:
+    - NAME: mask_points_and_boxes_outside_range
+      REMOVE_OUTSIDE_BOXES: True
+
+    - NAME: shuffle_points
+      SHUFFLE_ENABLED: {
+        'train': True,
+        'test': False
+      }
+
+    - NAME: transform_points_to_voxels
+      VOXEL_SIZE: [0.16, 0.16, 6]
+      MAX_POINTS_PER_VOXEL: 32
+      MAX_NUMBER_OF_VOXELS: {
+        'train': 16000,
+        'test': 40000
+      }

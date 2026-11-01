@@ -1,0 +1,9 @@
+# Table 5: parameter-matched global self-attention, per frame.
+# Identical to rev1/E3_attention.yaml
+_BASE_CONFIG_: cfgs/vod/4d_mambanet.yaml
+
+MODEL:
+    BACKBONE_3D:
+        MAMBA_CFG:
+            PER_FRAME_SEQUENCE: True
+            MIXER: attention

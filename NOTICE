@@ -1,0 +1,46 @@
+4D-MambaNet
+Copyright 2026 the authors
+
+This product includes software developed as a derivative of OpenPCDet.
+
+---------------------------------------------------------------------------
+OpenPCDet (Apache License 2.0)
+---------------------------------------------------------------------------
+This repository is based on OpenPCDet v0.6.0
+(https://github.com/open-mmlab/OpenPCDet), Copyright (c) OpenMMLab /
+OpenPCDet Development Team. The full Apache-2.0 license text is in LICENSE.
+Original OpenPCDet file headers are retained in the corresponding sources.
+
+Modifications and additions in this repository include (non-exhaustive):
+  - MambaVoxelBlock and integration into the sparse VoxelNeXt-style backbone
+    (pcdet/models/backbones_3d/mamba_voxel_block.py and related wiring)
+  - RCS point-feature controls (MODEL.RCS_IN_INPUT) and optional RCS-aware
+    BEV modules used for Table 7 ablations
+  - Paper experiment configs under tools/cfgs/, analysis scripts under
+    tools/analysis/, and documentation under docs/
+  - Checkpoint loading adaptations for spconv weight layouts used by the
+    released Radar M3-Net / 4D-MambaNet weights
+  - Dataset path overrides via MAMBANET4D_DATA / DATA_PATH
+
+---------------------------------------------------------------------------
+Radar M3-Net components (released with permission)
+---------------------------------------------------------------------------
+MSVFE / multi-scale VFE, temporal fusion, sparse dual-head detection, and
+related VoD/TJ4D dataset helpers derive from Radar M3-Net
+(Y. Yang et al., Expert Systems with Applications, 2025, vol. 286, 127515).
+Files taken from that codebase are marked with a permission header.
+See THIRD_PARTY_NOTICES.md.
+
+---------------------------------------------------------------------------
+Point Transformer V3 / Pointcept (MIT License)
+---------------------------------------------------------------------------
+PTv3 attention stages and Point structures are adapted from Pointcept
+(https://github.com/Pointcept/Pointcept), MIT License. Original author
+headers are retained under pcdet/models/backbones_3d/attn_layer/ptv3/ and
+pcdet/models/model_utils/pointcept_utils/.
+
+---------------------------------------------------------------------------
+Other third-party dependencies
+---------------------------------------------------------------------------
+Training and inference additionally use mamba-ssm (Apache-2.0) and
+causal-conv1d (BSD-3-Clause). See THIRD_PARTY_NOTICES.md and requirements.

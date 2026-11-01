@@ -1,0 +1,6 @@
+# Table 7(c) ablation ONLY — connected RCS BEV prior without RCS input.
+# Identical to rcs_fix uni_ptv3_mamba_rcs_fixed_noinput.yaml
+_BASE_CONFIG_: cfgs/vod/ablation_rcs_bev/4d_mambanet_bev_prior.yaml
+
+MODEL:
+    RCS_IN_INPUT: False
