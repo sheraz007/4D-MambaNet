@@ -152,3 +152,4 @@ Training follows the submitted implementation, in which the active voxels of all
 ## Acknowledgements
 
 This repository is based on [OpenPCDet](https://github.com/open-mmlab/OpenPCDet) and builds on [Radar M3-Net](https://doi.org/10.1016/j.eswa.2025.127515). See [`NOTICE`](NOTICE), [`LICENSE`](LICENSE) and [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
+
